@@ -12,9 +12,12 @@
 		7D85FCBC229D7B2E00884324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D85FCBA229D7B2E00884324 /* Main.storyboard */; };
 		7D85FCBE229D7B3000884324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D85FCBD229D7B3000884324 /* Assets.xcassets */; };
 		7D85FCC1229D7B3000884324 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D85FCBF229D7B3000884324 /* LaunchScreen.storyboard */; };
+		98C8A745FFF208A63E1D9AE2 /* Pods_BeautifulGirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBA32530223F5E27B48234B /* Pods_BeautifulGirl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BD2B7D87EA26D25D4957EEF /* Pods-BeautifulGirl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautifulGirl.debug.xcconfig"; path = "Target Support Files/Pods-BeautifulGirl/Pods-BeautifulGirl.debug.xcconfig"; sourceTree = "<group>"; };
+		6A78C90A7731570E193748B3 /* Pods-BeautifulGirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautifulGirl.release.xcconfig"; path = "Target Support Files/Pods-BeautifulGirl/Pods-BeautifulGirl.release.xcconfig"; sourceTree = "<group>"; };
 		7D85FCB3229D7B2E00884324 /* BeautifulGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautifulGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D85FCB6229D7B2E00884324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D85FCB8229D7B2E00884324 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		7D85FCBD229D7B3000884324 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D85FCC0229D7B3000884324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D85FCC2229D7B3000884324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADBA32530223F5E27B48234B /* Pods_BeautifulGirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautifulGirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98C8A745FFF208A63E1D9AE2 /* Pods_BeautifulGirl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		204EF50449026ECC47C7DEE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADBA32530223F5E27B48234B /* Pods_BeautifulGirl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D2B2FB0DF484DB383B447E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BD2B7D87EA26D25D4957EEF /* Pods-BeautifulGirl.debug.xcconfig */,
+				6A78C90A7731570E193748B3 /* Pods-BeautifulGirl.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7D85FCAA229D7B2E00884324 = {
 			isa = PBXGroup;
 			children = (
 				7D85FCB5229D7B2E00884324 /* BeautifulGirl */,
 				7D85FCB4229D7B2E00884324 /* Products */,
+				3D2B2FB0DF484DB383B447E1 /* Pods */,
+				204EF50449026ECC47C7DEE6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D85FCC5229D7B3000884324 /* Build configuration list for PBXNativeTarget "BeautifulGirl" */;
 			buildPhases = (
+				D077E4D759A2F33DF06FACAE /* [CP] Check Pods Manifest.lock */,
 				7D85FCAF229D7B2E00884324 /* Sources */,
 				7D85FCB0229D7B2E00884324 /* Frameworks */,
 				7D85FCB1229D7B2E00884324 /* Resources */,
+				08C7D7BBB02F336669BA48F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,73 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08C7D7BBB02F336669BA48F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeautifulGirl/Pods-BeautifulGirl-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeautifulGirl/Pods-BeautifulGirl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D077E4D759A2F33DF06FACAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeautifulGirl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D85FCAF229D7B2E00884324 /* Sources */ = {
@@ -280,6 +374,7 @@
 		};
 		7D85FCC6229D7B3000884324 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BD2B7D87EA26D25D4957EEF /* Pods-BeautifulGirl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +393,7 @@
 		};
 		7D85FCC7229D7B3000884324 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A78C90A7731570E193748B3 /* Pods-BeautifulGirl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
