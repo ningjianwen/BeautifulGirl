@@ -11,4 +11,6 @@ pod 'RxDataSources'
 pod 'Then'
 pod 'SwiftDate'
 pod 'SnapKit'
+pod 'MJRefresh'
+pod 'SYPhotoBrowser'
 end
