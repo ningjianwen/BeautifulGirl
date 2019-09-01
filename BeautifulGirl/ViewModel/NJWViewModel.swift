@@ -57,7 +57,7 @@ extension NJWViewModel: NJWViewModelType{
         
         let output = Output(sections: sections)
         output.requestCommand.subscribe(onNext: { [unowned self] isReloadData in
-            self.index = isReloadData ? 1 : self.index + 1
+            self.index = isReloadData ? 0 : self.index + 1
             NJWNetTool.rx.request(.requestWithcategory(type: input.category, index: self.index))
             .asObservable()
             .mapArray(GirlModel.self)

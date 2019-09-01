@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import MJRefresh
+import SYPhotoBrowser
 
 let screenWidth: CGFloat = UIScreen.main.bounds.size.width
 let screenHeight: CGFloat = UIScreen.main.bounds.size.height
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
         return cv
     }()
     
+    
     //创建数据源
     let dataSource = RxCollectionViewSectionedReloadDataSource<NJWSection>(
         configureCell: { (dataSource, collectionView, indexPath, itemModel) in
@@ -59,8 +61,15 @@ class ViewController: UIViewController {
         
         setupUI()
         bindView()
+        navigationItem()
         // 加载数据
         collectionView.mj_header.beginRefreshing()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        self.collectionView.collectionViewLayout.finalizeCollectionViewUpdates()
     }
 }
 
@@ -70,6 +79,13 @@ extension ViewController{
         
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(self.collectionView)
+    }
+    
+    fileprivate func navigationItem(){
+        let dropdownMenu = SYNavigationDropdownMenu(navigationController: self.navigationController!)
+        dropdownMenu?.dataSource = self
+        dropdownMenu!.delegate = self
+        self.navigationItem.titleView = dropdownMenu
     }
     
     fileprivate func bindView(){
@@ -94,18 +110,56 @@ extension ViewController{
             }
         }).disposed(by: rx.disposeBag)
         
-        collectionView.rx.modelSelected(GirlModel.self).subscribe(onNext:{itemModel in
-            
+//        Observable.zip(collectionView.rx.itemSelected, collectionView.rx.modelSelected(GirlModel.self)).bind(onNext: {[weak self] indexPath, itemModel in
+//            var phtoUrlArray: Array<String> = []
+//            phtoUrlArray.append(itemModel.image_url)
+//            let photoBrowser: SYPhotoBrowser = SYPhotoBrowser(imageSourceArray: phtoUrlArray, caption: nil, delegate: self)
+////                photoBrowser.prefersStatusBarHidden = false
+////            photoBrowser.pageControlStyle = SYPhotoBrowserPageControlStyle
+//            photoBrowser.initialPageIndex = UInt(indexPath.item)
+//            UIApplication.shared.delegate?.window?!.rootViewController?.present(photoBrowser, animated: true)
+//        }).disposed(by: disposeBag)
+        collectionView.rx.modelSelected(GirlModel.self).subscribe(onNext:{[weak self] itemModel in
+
             print("current selected model is \(itemModel)")
+            let photoBrowser: SYPhotoBrowser = SYPhotoBrowser(imageSourceArray: [itemModel.image_url], caption: nil, delegate: self)
+            //                photoBrowser.prefersStatusBarHidden = false
+            //            photoBrowser.pageControlStyle = SYPhotoBrowserPageControlStyle
+            UIApplication.shared.delegate?.window?!.rootViewController?.present(photoBrowser, animated: true)
+
         }).disposed(by: disposeBag)
         
         collectionView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             vmOutput.requestCommand.onNext(true)
+//            self.collectionView.reloadData()
         })
         
         collectionView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             vmOutput.requestCommand.onNext(false)
         })
+    }
+}
+
+extension ViewController: SYNavigationDropdownMenuDataSource, SYNavigationDropdownMenuDelegate{
+    func titleArray(for navigationDropdownMenu: SYNavigationDropdownMenu!) -> [String]! {
+        return ["所有", "大胸", "翘臀", "黑丝", "美腿", "清新", "杂烩"]
+    }
+    
+    func arrowImage(for navigationDropdownMenu: SYNavigationDropdownMenu!) -> UIImage! {
+        return UIImage.init(named: "Arrow")
+    }
+    func arrowPadding(for navigationDropdownMenu: SYNavigationDropdownMenu!) -> CGFloat {
+        return 8.0
+    }
+    
+    func keepCellSelection(for navigationDropdownMenu: SYNavigationDropdownMenu!) -> Bool {
+        return false
+    }
+    
+    func navigationDropdownMenu(_ navigationDropdownMenu: SYNavigationDropdownMenu!, didSelectTitleAt index: UInt) {
+        self.category = ApiManager.indexToCategory(index: Int(index))
+        print("self.category = \(self.category) index =\(index)")
+        self.collectionView.mj_header.beginRefreshing()
     }
 }
 

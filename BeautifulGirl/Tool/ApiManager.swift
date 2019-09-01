@@ -22,6 +22,36 @@ enum ApiManager {
         case GirlCategoryZaHui = "ZaHui"
     }
     case requestWithcategory(type: GirlCategory, index: Int)
+    
+    static func indexToCategory(index: Int) -> GirlCategory{
+        var category: GirlCategory
+        switch index {
+        case 0:
+           category = GirlCategory.GirlCategoryAll
+            break
+        case 1:
+            category = GirlCategory.GirlCategoryDaXiong
+            break
+        case 2:
+            category = GirlCategory.GirlCategoryQiaoTun
+            break
+        case 3:
+            category = GirlCategory.GirlCategoryHeisi
+            break
+        case 4:
+            category = GirlCategory.GirlCategoryMeiTui
+            break
+        case 5:
+            category = GirlCategory.GirlCategoryQingXin
+            break
+        case 6:
+            category = GirlCategory.GirlCategoryZaHui
+            break
+        default:
+           category = GirlCategory.GirlCategoryAll
+        }
+        return category
+    }
 }
 
 extension ApiManager: TargetType{

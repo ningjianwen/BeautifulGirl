@@ -19,6 +19,7 @@
 		7DCB5839231A773E005A8B5B /* NJWViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB5838231A773E005A8B5B /* NJWViewModel.swift */; };
 		7DCB583B231A91FF005A8B5B /* NJWProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB583A231A91FF005A8B5B /* NJWProgressHUD.swift */; };
 		7DCB583E231A9515005A8B5B /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB583D231A9515005A8B5B /* Response+ObjectMapper.swift */; };
+		7DCB5846231B5B5B005A8B5B /* SYNavigationDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB5844231B5B5B005A8B5B /* SYNavigationDropdownMenu.m */; };
 		98C8A745FFF208A63E1D9AE2 /* Pods_BeautifulGirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBA32530223F5E27B48234B /* Pods_BeautifulGirl.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,9 @@
 		7DCB5838231A773E005A8B5B /* NJWViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJWViewModel.swift; sourceTree = "<group>"; };
 		7DCB583A231A91FF005A8B5B /* NJWProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJWProgressHUD.swift; sourceTree = "<group>"; };
 		7DCB583D231A9515005A8B5B /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
+		7DCB583F231B55CC005A8B5B /* BeautifulGirl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeautifulGirl-Bridging-Header.h"; sourceTree = "<group>"; };
+		7DCB5844231B5B5B005A8B5B /* SYNavigationDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNavigationDropdownMenu.m; sourceTree = "<group>"; };
+		7DCB5845231B5B5B005A8B5B /* SYNavigationDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNavigationDropdownMenu.h; sourceTree = "<group>"; };
 		ADBA32530223F5E27B48234B /* Pods_BeautifulGirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautifulGirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,6 +78,7 @@
 		7D85FCAA229D7B2E00884324 = {
 			isa = PBXGroup;
 			children = (
+				7DCB5843231B5B1C005A8B5B /* vendor */,
 				7D85FCB5229D7B2E00884324 /* BeautifulGirl */,
 				7D85FCB4229D7B2E00884324 /* Products */,
 				3D2B2FB0DF484DB383B447E1 /* Pods */,
@@ -104,6 +109,7 @@
 				7D85FCBD229D7B3000884324 /* Assets.xcassets */,
 				7D85FCBF229D7B3000884324 /* LaunchScreen.storyboard */,
 				7D85FCC2229D7B3000884324 /* Info.plist */,
+				7DCB583F231B55CC005A8B5B /* BeautifulGirl-Bridging-Header.h */,
 			);
 			path = BeautifulGirl;
 			sourceTree = "<group>";
@@ -165,6 +171,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		7DCB5843231B5B1C005A8B5B /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7DCB5845231B5B5B005A8B5B /* SYNavigationDropdownMenu.h */,
+				7DCB5844231B5B5B005A8B5B /* SYNavigationDropdownMenu.m */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,7 +214,7 @@
 				TargetAttributes = {
 					7D85FCB2229D7B2E00884324 = {
 						CreatedOnToolsVersion = 10.2.1;
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -284,6 +299,7 @@
 				7DCB583B231A91FF005A8B5B /* NJWProgressHUD.swift in Sources */,
 				7D85FCB9229D7B2E00884324 /* ViewController.swift in Sources */,
 				7D85FCCB229EBC1000884324 /* GirlModel.swift in Sources */,
+				7DCB5846231B5B5B005A8B5B /* SYNavigationDropdownMenu.m in Sources */,
 				7D85FCC9229EB5D700884324 /* BeautifulGirlCell.swift in Sources */,
 				7D85FCCF22A3721B00884324 /* ApiManager.swift in Sources */,
 				7DCB5839231A773E005A8B5B /* NJWViewModel.swift in Sources */,
@@ -446,7 +462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chain.njw.BeautifulGirl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeautifulGirl/BeautifulGirl-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -468,7 +484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chain.njw.BeautifulGirl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeautifulGirl/BeautifulGirl-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
