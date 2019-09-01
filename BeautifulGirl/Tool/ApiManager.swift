@@ -10,7 +10,18 @@ import Foundation
 import Moya
 
 enum ApiManager {
-    case requestWithcategory(String,Int)
+    
+    enum GirlCategory: String{
+        
+        case GirlCategoryAll = "All"
+        case GirlCategoryDaXiong = "DaXiong"
+        case GirlCategoryQiaoTun = "QiaoTun"
+        case GirlCategoryHeisi = "Heisi"
+        case GirlCategoryMeiTui = "MeiTui"
+        case GirlCategoryQingXin = "QingXin"
+        case GirlCategoryZaHui = "ZaHui"
+    }
+    case requestWithcategory(type: GirlCategory, index: Int)
 }
 
 extension ApiManager: TargetType{
@@ -27,12 +38,22 @@ extension ApiManager: TargetType{
     var path: String{
         switch self{
         case .requestWithcategory(let category,let page):
-            return "/category/\(category)/page/\(page)"
+            return "/category/\(category.rawValue)/page/\(page)" //此处因为是枚举值，必须使用category.rawValue，否则请求不到数据
         }
     }
     /// The HTTP method used in the request.
     var method: Moya.Method {
         return .get
+    }
+    
+    /// The parameters to be encoded in the request.
+    var parameters: [String: Any]? {
+        return nil
+    }
+    
+    /// The method used for parameter encoding.
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
     }
     
     /// Provides stub data for use in testing.
@@ -45,3 +66,6 @@ extension ApiManager: TargetType{
         return false
     }
 }
+
+let NJWNetTool = MoyaProvider<ApiManager>()
+

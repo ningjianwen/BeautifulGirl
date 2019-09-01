@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,11 @@
 		7D85FCC1229D7B3000884324 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D85FCBF229D7B3000884324 /* LaunchScreen.storyboard */; };
 		7D85FCC9229EB5D700884324 /* BeautifulGirlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85FCC8229EB5D700884324 /* BeautifulGirlCell.swift */; };
 		7D85FCCB229EBC1000884324 /* GirlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85FCCA229EBC1000884324 /* GirlModel.swift */; };
-		7D85FCCD22A370F500884324 /* ToModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85FCCC22A370F500884324 /* ToModelExtension.swift */; };
 		7D85FCCF22A3721B00884324 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85FCCE22A3721B00884324 /* ApiManager.swift */; };
-		7D85FCD722A37B3000884324 /* GirlCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85FCD622A37B3000884324 /* GirlCategory.swift */; };
+		7DCB5831231A746B005A8B5B /* NJWViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB5830231A746B005A8B5B /* NJWViewModelType.swift */; };
+		7DCB5839231A773E005A8B5B /* NJWViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB5838231A773E005A8B5B /* NJWViewModel.swift */; };
+		7DCB583B231A91FF005A8B5B /* NJWProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB583A231A91FF005A8B5B /* NJWProgressHUD.swift */; };
+		7DCB583E231A9515005A8B5B /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB583D231A9515005A8B5B /* Response+ObjectMapper.swift */; };
 		98C8A745FFF208A63E1D9AE2 /* Pods_BeautifulGirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBA32530223F5E27B48234B /* Pods_BeautifulGirl.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,9 +34,11 @@
 		7D85FCC2229D7B3000884324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D85FCC8229EB5D700884324 /* BeautifulGirlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautifulGirlCell.swift; sourceTree = "<group>"; };
 		7D85FCCA229EBC1000884324 /* GirlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirlModel.swift; sourceTree = "<group>"; };
-		7D85FCCC22A370F500884324 /* ToModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToModelExtension.swift; sourceTree = "<group>"; };
 		7D85FCCE22A3721B00884324 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		7D85FCD622A37B3000884324 /* GirlCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirlCategory.swift; sourceTree = "<group>"; };
+		7DCB5830231A746B005A8B5B /* NJWViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJWViewModelType.swift; sourceTree = "<group>"; };
+		7DCB5838231A773E005A8B5B /* NJWViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJWViewModel.swift; sourceTree = "<group>"; };
+		7DCB583A231A91FF005A8B5B /* NJWProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJWProgressHUD.swift; sourceTree = "<group>"; };
+		7DCB583D231A9515005A8B5B /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
 		ADBA32530223F5E27B48234B /* Pods_BeautifulGirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautifulGirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,18 +93,76 @@
 			isa = PBXGroup;
 			children = (
 				7D85FCB6229D7B2E00884324 /* AppDelegate.swift */,
-				7D85FCB8229D7B2E00884324 /* ViewController.swift */,
-				7D85FCC8229EB5D700884324 /* BeautifulGirlCell.swift */,
-				7D85FCCA229EBC1000884324 /* GirlModel.swift */,
-				7D85FCCC22A370F500884324 /* ToModelExtension.swift */,
-				7D85FCCE22A3721B00884324 /* ApiManager.swift */,
-				7D85FCD622A37B3000884324 /* GirlCategory.swift */,
+				7DCB583C231A94E6005A8B5B /* Extension */,
+				7DCB5837231A75BB005A8B5B /* Tool */,
+				7DCB5836231A7584005A8B5B /* Controller */,
+				7DCB5835231A757C005A8B5B /* View */,
+				7DCB5834231A7573005A8B5B /* Model */,
+				7DCB5833231A756A005A8B5B /* ViewModel */,
+				7DCB582F231A7418005A8B5B /* Protocol */,
 				7D85FCBA229D7B2E00884324 /* Main.storyboard */,
 				7D85FCBD229D7B3000884324 /* Assets.xcassets */,
 				7D85FCBF229D7B3000884324 /* LaunchScreen.storyboard */,
 				7D85FCC2229D7B3000884324 /* Info.plist */,
 			);
 			path = BeautifulGirl;
+			sourceTree = "<group>";
+		};
+		7DCB582F231A7418005A8B5B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				7DCB5830231A746B005A8B5B /* NJWViewModelType.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7DCB5833231A756A005A8B5B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7DCB5838231A773E005A8B5B /* NJWViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7DCB5834231A7573005A8B5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D85FCCA229EBC1000884324 /* GirlModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DCB5835231A757C005A8B5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D85FCC8229EB5D700884324 /* BeautifulGirlCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7DCB5836231A7584005A8B5B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7D85FCB8229D7B2E00884324 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7DCB5837231A75BB005A8B5B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				7D85FCCE22A3721B00884324 /* ApiManager.swift */,
+				7DCB583A231A91FF005A8B5B /* NJWProgressHUD.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		7DCB583C231A94E6005A8B5B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7DCB583D231A9515005A8B5B /* Response+ObjectMapper.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,44 +241,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeautifulGirl/Pods-BeautifulGirl-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SYPhotoBrowser/SYPhotoBrowser.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
-				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-BeautifulGirl/Pods-BeautifulGirl-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SYPhotoBrowser.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-BeautifulGirl/Pods-BeautifulGirl-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -252,13 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DCB583B231A91FF005A8B5B /* NJWProgressHUD.swift in Sources */,
 				7D85FCB9229D7B2E00884324 /* ViewController.swift in Sources */,
 				7D85FCCB229EBC1000884324 /* GirlModel.swift in Sources */,
 				7D85FCC9229EB5D700884324 /* BeautifulGirlCell.swift in Sources */,
-				7D85FCCD22A370F500884324 /* ToModelExtension.swift in Sources */,
 				7D85FCCF22A3721B00884324 /* ApiManager.swift in Sources */,
+				7DCB5839231A773E005A8B5B /* NJWViewModel.swift in Sources */,
 				7D85FCB7229D7B2E00884324 /* AppDelegate.swift in Sources */,
-				7D85FCD722A37B3000884324 /* GirlCategory.swift in Sources */,
+				7DCB583E231A9515005A8B5B /* Response+ObjectMapper.swift in Sources */,
+				7DCB5831231A746B005A8B5B /* NJWViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
