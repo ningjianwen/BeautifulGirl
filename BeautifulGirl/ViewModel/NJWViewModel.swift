@@ -23,7 +23,7 @@ enum NJWRefreshStatus {
 class NJWViewModel: NSObject {
     
     let models = Variable<[GirlModel]>([])
-    var index: Int = 1
+    var index: Int = 0
 }
 
 extension NJWViewModel: NJWViewModelType{
@@ -33,8 +33,8 @@ extension NJWViewModel: NJWViewModelType{
     
     struct NJWInput {
         
-        let category: ApiManager.GirlCategory
-        init(category: ApiManager.GirlCategory) {
+        var category = BehaviorRelay<ApiManager.GirlCategory>(value: .GirlCategoryAll)
+        init(category: BehaviorRelay<ApiManager.GirlCategory>) {
             self.category = category
         }
     }
@@ -56,25 +56,52 @@ extension NJWViewModel: NJWViewModelType{
         }.asDriver(onErrorJustReturn: [])
         
         let output = Output(sections: sections)
-        output.requestCommand.subscribe(onNext: { [unowned self] isReloadData in
-            self.index = isReloadData ? 0 : self.index + 1
-            NJWNetTool.rx.request(.requestWithcategory(type: input.category, index: self.index))
-            .asObservable()
-            .mapArray(GirlModel.self)
-            .subscribe({[weak self] (event) in
-                    switch event{
-                     
-                    case let .next(modelArr):
-                        self?.models.value = isReloadData ? modelArr : (self?.models.value ?? []) + modelArr
-                        NJWProgressHUD.showSuccess("加载成功")
-                    case let .error(error):
-                        NJWProgressHUD.showError(error.localizedDescription)
-                    case .completed:
-                        output.refreshStatus.value = isReloadData ? NJWRefreshStatus.endHeaderRefresh : NJWRefreshStatus.endFooterRefresh
-                    }
-                }).disposed(by: self.rx.disposeBag)
-        }).disposed(by: rx.disposeBag)
+        input.category.asObservable().subscribe{
+          
+            let category = $0.element
+            
+            output.requestCommand.subscribe(onNext: { [unowned self] isReloadData in
+                self.index = isReloadData ? 0 : self.index + 1
+                NJWNetTool.rx.request(.requestWithcategory(type: category!, index: self.index))
+                    .asObservable()
+                    .mapArray(GirlModel.self)
+                    .subscribe({[weak self] (event) in
+                        switch event{
+                            
+                        case let .next(modelArr):
+                            self?.models.value = isReloadData ? modelArr : (self?.models.value ?? []) + modelArr
+                            NJWProgressHUD.showSuccess("加载成功")
+                        case let .error(error):
+                            NJWProgressHUD.showError(error.localizedDescription)
+                        case .completed:
+                            output.refreshStatus.value = isReloadData ? NJWRefreshStatus.endHeaderRefresh : NJWRefreshStatus.endFooterRefresh
+                        }
+                    }).disposed(by: self.rx.disposeBag)
+            }).disposed(by: self.rx.disposeBag)
+            
+        }.disposed(by: rx.disposeBag)
         
         return output
     }
+    
+    /**
+     output.requestCommand.subscribe(onNext: { [unowned self] isReloadData in
+     self.index = isReloadData ? 0 : self.index + 1
+     NJWNetTool.rx.request(.requestWithcategory(type: input.category.value, index: self.index))
+     .asObservable()
+     .mapArray(GirlModel.self)
+     .subscribe({[weak self] (event) in
+     switch event{
+     
+     case let .next(modelArr):
+     self?.models.value = isReloadData ? modelArr : (self?.models.value ?? []) + modelArr
+     NJWProgressHUD.showSuccess("加载成功")
+     case let .error(error):
+     NJWProgressHUD.showError(error.localizedDescription)
+     case .completed:
+     output.refreshStatus.value = isReloadData ? NJWRefreshStatus.endHeaderRefresh : NJWRefreshStatus.endFooterRefresh
+     }
+     }).disposed(by: self.rx.disposeBag)
+     }).disposed(by: rx.disposeBag)
+     */
 }

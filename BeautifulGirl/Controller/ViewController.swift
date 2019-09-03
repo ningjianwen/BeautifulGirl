@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     )
     
     var page: Int = 0
-    var category: ApiManager.GirlCategory = .GirlCategoryAll
+    var category = BehaviorRelay<ApiManager.GirlCategory>(value: .GirlCategoryAll)
     let disposeBag = DisposeBag()
     let vmOutput: NJWViewModel.Output? = nil
 
@@ -66,11 +66,11 @@ class ViewController: UIViewController {
         collectionView.mj_header.beginRefreshing()
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        self.collectionView.collectionViewLayout.invalidateLayout()
-        self.collectionView.collectionViewLayout.finalizeCollectionViewUpdates()
-    }
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        super.viewWillTransition(to: size, with: coordinator)
+//        self.collectionView.collectionViewLayout.invalidateLayout()
+//        self.collectionView.collectionViewLayout.finalizeCollectionViewUpdates()
+//    }
 }
 
 extension ViewController{
@@ -157,7 +157,8 @@ extension ViewController: SYNavigationDropdownMenuDataSource, SYNavigationDropdo
     }
     
     func navigationDropdownMenu(_ navigationDropdownMenu: SYNavigationDropdownMenu!, didSelectTitleAt index: UInt) {
-        self.category = ApiManager.indexToCategory(index: Int(index))
+//        self.category = BehaviorRelay(value: ApiManager.indexToCategory(index: Int(index)))
+        self.category.accept(ApiManager.indexToCategory(index: Int(index)))
         print("self.category = \(self.category) index =\(index)")
         self.collectionView.mj_header.beginRefreshing()
     }
