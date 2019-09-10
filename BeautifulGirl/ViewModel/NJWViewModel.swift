@@ -83,25 +83,4 @@ extension NJWViewModel: NJWViewModelType{
         
         return output
     }
-    
-    /**
-     output.requestCommand.subscribe(onNext: { [unowned self] isReloadData in
-     self.index = isReloadData ? 0 : self.index + 1
-     NJWNetTool.rx.request(.requestWithcategory(type: input.category.value, index: self.index))
-     .asObservable()
-     .mapArray(GirlModel.self)
-     .subscribe({[weak self] (event) in
-     switch event{
-     
-     case let .next(modelArr):
-     self?.models.value = isReloadData ? modelArr : (self?.models.value ?? []) + modelArr
-     NJWProgressHUD.showSuccess("加载成功")
-     case let .error(error):
-     NJWProgressHUD.showError(error.localizedDescription)
-     case .completed:
-     output.refreshStatus.value = isReloadData ? NJWRefreshStatus.endHeaderRefresh : NJWRefreshStatus.endFooterRefresh
-     }
-     }).disposed(by: self.rx.disposeBag)
-     }).disposed(by: rx.disposeBag)
-     */
 }

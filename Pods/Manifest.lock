@@ -28,11 +28,9 @@ PODS:
   - SDWebImage/Core (5.0.2)
   - SnapKit (5.0.0)
   - SVProgressHUD (2.2.5)
-  - SwiftDate (6.0.2)
   - SYPhotoBrowser (2.2):
     - DACircularProgress
     - SDWebImage
-  - Then (2.4.0)
 
 DEPENDENCIES:
   - Kingfisher
@@ -46,9 +44,7 @@ DEPENDENCIES:
   - RxSwift
   - SnapKit
   - SVProgressHUD
-  - SwiftDate
   - SYPhotoBrowser
-  - Then
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -67,9 +63,7 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - SVProgressHUD
-    - SwiftDate
     - SYPhotoBrowser
-    - Then
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -87,10 +81,8 @@ SPEC CHECKSUMS:
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftDate: bbed9b23bfec599bd62b9a305afc554f7bd0eb6f
   SYPhotoBrowser: 3d07334dbcf6430f7f028f32a14f8ec77bc61fe2
-  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
-PODFILE CHECKSUM: cf2abe5508baa1b52b96b6113861b68e0b76d3a8
+PODFILE CHECKSUM: 7f95e86a61a1e206463fc117dece6816ece01382
 
 COCOAPODS: 1.7.5

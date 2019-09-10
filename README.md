@@ -18,7 +18,7 @@ ViewModel的业务模型如下：
  
 demo的整体目录结构如下：
 
-
+![groups.png](./groups@2x.png)
 ## 使用到的第三方库
 
 开发一个App最基本的三大要素：**网络请求**、**数据解析**、**UI布局**，其它的都是这三大要素相关联的，或者更细的功能划分。
@@ -31,7 +31,7 @@ demo的整体目录结构如下：
 - 网络加载提示使用的是**SVProgressHUD**。
 
 使用到的三方库的cocoapod目录如下：
-
+![cocospods@2x.png](./cocospods@2x.png)
 ## 具体实现
 ### viewmodel的协议
 
@@ -172,6 +172,6 @@ fileprivate func bindView(){
 ```
 ## 效果展示如下
 
-
+![effect.gif](./effect.gif)
 
 

@@ -20,6 +20,10 @@
 		7DCB583B231A91FF005A8B5B /* NJWProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB583A231A91FF005A8B5B /* NJWProgressHUD.swift */; };
 		7DCB583E231A9515005A8B5B /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB583D231A9515005A8B5B /* Response+ObjectMapper.swift */; };
 		7DCB5846231B5B5B005A8B5B /* SYNavigationDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB5844231B5B5B005A8B5B /* SYNavigationDropdownMenu.m */; };
+		7DFB4CD22327E7A0001D9353 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7DFB4CD12327E7A0001D9353 /* README.md */; };
+		7DFB4CD62327E7C5001D9353 /* cocospods@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DFB4CD32327E7C5001D9353 /* cocospods@2x.png */; };
+		7DFB4CD72327E7C5001D9353 /* groups@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DFB4CD42327E7C5001D9353 /* groups@2x.png */; };
+		7DFB4CD82327E7C5001D9353 /* effect.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7DFB4CD52327E7C5001D9353 /* effect.gif */; };
 		98C8A745FFF208A63E1D9AE2 /* Pods_BeautifulGirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBA32530223F5E27B48234B /* Pods_BeautifulGirl.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		7DCB583F231B55CC005A8B5B /* BeautifulGirl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeautifulGirl-Bridging-Header.h"; sourceTree = "<group>"; };
 		7DCB5844231B5B5B005A8B5B /* SYNavigationDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNavigationDropdownMenu.m; sourceTree = "<group>"; };
 		7DCB5845231B5B5B005A8B5B /* SYNavigationDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNavigationDropdownMenu.h; sourceTree = "<group>"; };
+		7DFB4CD12327E7A0001D9353 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7DFB4CD32327E7C5001D9353 /* cocospods@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cocospods@2x.png"; sourceTree = "<group>"; };
+		7DFB4CD42327E7C5001D9353 /* groups@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groups@2x.png"; sourceTree = "<group>"; };
+		7DFB4CD52327E7C5001D9353 /* effect.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = effect.gif; sourceTree = "<group>"; };
 		ADBA32530223F5E27B48234B /* Pods_BeautifulGirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautifulGirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,6 +86,10 @@
 		7D85FCAA229D7B2E00884324 = {
 			isa = PBXGroup;
 			children = (
+				7DFB4CD52327E7C5001D9353 /* effect.gif */,
+				7DFB4CD32327E7C5001D9353 /* cocospods@2x.png */,
+				7DFB4CD42327E7C5001D9353 /* groups@2x.png */,
+				7DFB4CD12327E7A0001D9353 /* README.md */,
 				7DCB5843231B5B1C005A8B5B /* vendor */,
 				7D85FCB5229D7B2E00884324 /* BeautifulGirl */,
 				7D85FCB4229D7B2E00884324 /* Products */,
@@ -241,9 +253,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFB4CD72327E7C5001D9353 /* groups@2x.png in Resources */,
 				7D85FCC1229D7B3000884324 /* LaunchScreen.storyboard in Resources */,
 				7D85FCBE229D7B3000884324 /* Assets.xcassets in Resources */,
+				7DFB4CD22327E7A0001D9353 /* README.md in Resources */,
 				7D85FCBC229D7B2E00884324 /* Main.storyboard in Resources */,
+				7DFB4CD82327E7C5001D9353 /* effect.gif in Resources */,
+				7DFB4CD62327E7C5001D9353 /* cocospods@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@
 //  这是一个练习项目，也算是一份福利吧
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +23,71 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationVC
         window?.makeKeyAndVisible()
         NJWProgressHUD.initNJWProgressHUD()
+//        testFilter()
+//        testFlatMap()
+        testGroupBy()
         return true
+    }
+    
+    func testFilter(){
+        
+        // 筛选出字符串的长度小于10的字符串
+        let stringArray = ["Objective-C", "Swift", "HTML", "CSS", "JavaScript"]
+        func stringCountLess10(string: String) -> Bool {
+            return string.count < 10
+        }
+        let arr1 = stringArray.filter(stringCountLess10)
+        print("arr1: \(arr1)")
+        let arr2 = stringArray.filter({string -> Bool in
+            return string.count < 10
+        })
+        print("arr2: \(arr2)")
+        // $0表示数组中的每一个元素
+        let arr3 = stringArray.filter{
+            return $0.count < 10
+        }
+        print("arr1: \(arr3)")
+    }
+    
+    func testFlatMap(){
+        
+        let subject1 = BehaviorSubject(value: "A")
+        let subject2 = BehaviorSubject(value: "1")
+        
+        let variable = Variable(subject1)
+        
+        let disposeBag = DisposeBag()
+        
+        variable.asObservable()
+            .flatMapFirst { $0 }
+            .subscribe(onNext: { print("current value: \($0)") })
+            .disposed(by: disposeBag)
+        
+        subject1.onNext("B")
+        variable.value = subject2
+        subject1.onNext("C")
+    }
+    
+    func testGroupBy(){
+        
+        let disposeBag = DisposeBag()
+        //将奇数偶数分成两组
+        Observable<Int>.of(0, 1, 2, 3, 4, 5)
+            .groupBy(keySelector: { (element) -> String in
+                return element % 2 == 0 ? "偶数" : "基数"
+            })
+            .subscribe { (event) in
+                switch event {
+                case .next(let group):
+                    group.asObservable().subscribe({ (event) in
+                        print("key：\(group.key)    event：\(event)")
+                    })
+                        .disposed(by: disposeBag)
+                default:
+                    print("")
+                }
+            }
+            .disposed(by: disposeBag)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
